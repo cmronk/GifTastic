@@ -1,0 +1,23 @@
+.topic-btn, #add-topic, #user-input {
+    background-color: black;
+    color: white;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.gifs {
+    float:left;
+    align-items: center;
+    max-height: 400px;
+    max-width: 400px;
+    margin: 10px 10px 10px 10px;
+    padding: 10px;
+    overflow-wrap: normal;
+    border: 2 px solid white;
+}
+
+body {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
