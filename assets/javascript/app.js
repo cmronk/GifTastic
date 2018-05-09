@@ -16,8 +16,8 @@ function renderButtons(){
         a.attr("data-name", topics[i]);
         a.text(topics[i]);
         $("#buttons-view").append(a);
-        } 
-    };
+    } 
+}
 
 // updating HTML
 function getGiphy() {
@@ -27,17 +27,14 @@ function getGiphy() {
     
     // AJAX call for button being clicked
     $.ajax({
-    url: queryURL,
-    method: "GET"
+        url: queryURL,
+        method: "GET"
     }).then(function(response) {
         
-        $(".gifs").empty();
         for(var i = 0; i < topics.length; i++){
 
             // creates div for gifs
-            var gifsDiv = $("<div>");
-            // gives class to div
-            gifsDiv.attr("class", "gifs");
+            var gifsDiv = $("<div class = 'gifs'>");
 
             // holds ratings
             var rating = response.data[i].rating;
@@ -62,13 +59,12 @@ function getGiphy() {
 
     renderButtons();
 
-
     $("#add-topic").on("click", function(event) {
         event.preventDefault();
         // .trim prevents blank spaces beforehand
         var addTopic = $("#user-input").val().trim();
         topics.push(addTopic);
-        // renderButtons();
+        renderButtons();
     });
 
     $("body").on("click", ".giphyImage", function(){
