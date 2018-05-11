@@ -21,7 +21,6 @@ function getGiphy() {
     }).then(function(response) {
 
         for(var i = 0; i < response.data.length; i++){
-            $("#gifs").empty();
             // creates div for gifs
             var gifsDiv = $("<div class = 'gifs'>");
 
@@ -39,9 +38,16 @@ function getGiphy() {
             giphyImages.attr("data-animate", response.data[i].images.fixed_height.url);
             giphyImages.attr("data-state", "still");
             giphyImages.attr("class","giphyImage");
-            gifsDiv.prepend(giphyImages);
-            gifsDiv.prepend(ratings);
+            gifsDiv.append(giphyImages);
+
+            // ratings below gifs
+            gifsDiv.append(ratings);
+
+            // last selected topic's gifs displayed at top
             $("#gifsGoHere").prepend(gifsDiv);
+
+
+            $(".title").text(topic);
         }
     });
 }
@@ -51,7 +57,6 @@ function getGiphy() {
 function renderButtons() {
     // this prevents repeat buttons when we run the renderButtons function
     $("#buttons-view").empty();
-    $(".gifs").empty();
 
     // loop through array and create buttons
     for(var i = 0; i < topics.length; i++) {
@@ -63,12 +68,14 @@ function renderButtons() {
         $("#buttons-view").append(btns);
     } 
 }
-
+renderButtons();
+    // this clears the existing gifs when we click add topic :/
     $("#add-topic").on("click", function(event) {
         event.preventDefault();
 
         // .trim prevents blank spaces beforehand
         var addTopic = $("#user-input").val().trim();
+        
         topics.push(addTopic);
         console.log(addTopic);
         renderButtons();
@@ -77,7 +84,6 @@ function renderButtons() {
     });
 
     $("body").on("click", ".giphyImage", function(){
-        event.preventDefault();            
         var state = $(this).attr("data-state");
 
         if (state === "still") {

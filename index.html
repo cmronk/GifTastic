@@ -10,27 +10,45 @@
     </head>
     <body>
         <div class="container">
-            <h1>Snow White and the 7 Dwarfs</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Snow White and the 7 Dwarfs</h1>
+                </div>    
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- rendered buttons will go in this div -->
+                    <div id="buttons-view"></div>
+                </div>    
+            </div>
 
-            <!-- rendered buttons will go in this div -->
-            <div id="buttons-view"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- user input to get info to make new buttons-->
+                    <!-- <form id="user-form"> -->
+                        <label for="user-input">Name another Dwarf</label>
+                        <input type="text" id="user-input">
+                        <br>
+                    <!-- button to "send user input to make button" -->
+                        <input id="add-topic" type="submit" value="It's off to work we go!">
+                    <!-- </form> -->
+                </div>
+            </div>    
 
-            <!-- user input to get info to make new buttons-->
-            <form id="user-form">
-                <label for="user-input">Name another Dwarf</label>
-                <input type="text" id="user-input">
-                <br>
-                
-            <!-- button to "send user input to make button" -->
-                <input id="add-topic" type="submit" value="It's off to work we go!">
-            </form>
-            <!-- <div id="searches"></div> -->
-
-            <!-- This is where the gifs will output -->
-            <div id="gifsGoHere"></div>
-
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row"></div>
+                </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- This is where the gifs will output -->
+                    <div id="gifsGoHere"></div>
+                </div>
+            </div>
 
         </div>
+    
         <footer><a href= "https://giphy.com/"><img src="assets/images/giphybadge.gif"></a></footer>
         <script type="text/javascript" src="assets/javascript/app.js"></script>
     </body>
