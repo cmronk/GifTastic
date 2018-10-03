@@ -1,28 +1,23 @@
 body {
     text-align: center;
-    background-image: url("../images/background.jpeg");
+    /* background-image: url("../images/background.jpeg"); */
+    background-image: url("../images/whirlpool.png");
     background-color: black;
-    color: white;
-    font-family: 'Poiret One', cursive;
+    /* color: white; */
+    font-family: 'Fredericka the Great', cursive;
     font-size: 25px;
 }
 
 p {
-    background-color: black;
     opacity: 0.75;    
     border: 1px solid white;
     font-size: 20px;
-
 }
 
-h1 {
-    margin: 10px;
-    font-weight: bold;
-    color:white;
-    font-size: 50px;
-    border: solid white;
-    border-style: inset;
-    opacity: 0.75;
+.jumbotron {
+    background: black;
+    color: white;
+    padding: 5%;
 }
 
 .topic-btn, #add-topic, #user-input {
@@ -30,19 +25,22 @@ h1 {
     opacity: 0.8;
     color: white;
     margin: 10px;
-    font-size: 25px;
+    font-size: 20px;
     border: solid white;
+    border-radius: 0.5rem;
     border-style: inset;
-
 }
 
 .gifs {
+    background: black;
+    color: white;
     float:left;
     align-items: center;
-    max-height: 400px;
-    margin: 10px 10px 10px 10px;
-    padding: 10px;
+    max-height: 350px;
+    margin: 10px 10px 0px 10px;
+    padding: 10px 10px 0px 10px;
     overflow-wrap: normal;
+    border-radius: 0.5rem;
 }
 
 
